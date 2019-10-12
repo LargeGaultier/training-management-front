@@ -1,8 +1,8 @@
 export const environment = {
   production: false,
   apiTrainingCenter:
-    'https://trainingmanagementrestapi.azurewebsites.net/api/v1/training-center/',
-  routeRefBlocks: 'refblocks/'
+    'https://trainingmanagementrefwebapi.azurewebsites.net/api​/v1​/training-center​/',
+  routeRefBlocks: '/refblocks/'
 };
 
 /*
