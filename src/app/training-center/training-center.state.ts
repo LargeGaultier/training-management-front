@@ -15,9 +15,9 @@ export interface TrainingCenterModel {
 }
 
 @State<TrainingCenterModel>({
-  name: 'training-center',
+  name: 'trainingCenter',
   defaults: {
-    loadingRefBlocks: false,
+    loadingRefBlocks: true,
     refBlocks: [],
     isloadingRefBlocksFailed: false
   }
