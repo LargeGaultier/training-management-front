@@ -14,6 +14,14 @@
   align-items: center;
 }
 
+mat-card {
+  width: 370px;
+}
+
+mat-card-content {
+  flex-direction: column;
+}
+
 .trm-logo {
   display: flex;
   justify-content: center;
@@ -43,5 +51,36 @@ mat-card-content {
 
 .button {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  button {
+    width: 220px;
+  }
+}
+
+.separator {
+  position: relative;
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 15px;
+  font-weight: bold;
+  margin: 24px auto;
+}
+
+.separator .text:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 30px;
+  left: calc(-100% - 15px);
+  top: 6px;
+  border-top: 3px solid;
+}
+
+.separator .text::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 30px;
+  right: calc(-100% - 15px);
+  top: 6px;
+  border-top: 3px solid;
 }
