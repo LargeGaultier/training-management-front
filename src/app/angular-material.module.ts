@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import {
   MatButtonModule,
   MatCardModule,
+  MatExpansionModule,
   MatIconModule,
   MatInputModule,
   MatListModule,
@@ -16,7 +17,8 @@ const MAT_COMPONENTS_MODULES = [
   MatListModule,
   MatIconModule,
   MatCardModule,
-  MatInputModule
+  MatInputModule,
+  MatExpansionModule
 ];
 
 @NgModule({

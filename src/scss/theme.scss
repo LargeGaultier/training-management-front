@@ -3,7 +3,7 @@
 @include mat-core();
 
 $custom-blue: (
-  default: #005bbb,
+  default: #1f88e5,
   lighter: #5887ee,
   darker: #00338a,
   contrast: (
@@ -29,10 +29,13 @@ $trm-accent: mat-palette($custom-orange, default, lighter, darker);
 
 $theme: mat-light-theme($trm-primary, $trm-accent);
 
+$primary: map-get($theme, primary);
+
 .trm-light {
   $vars: (
-    background: whitesmoke,
-    icon: #111111
+    background: #eef4f8,
+    icon: #111111,
+    ackground-spinner: #eef4f8
   );
 
   @include angular-material-theme($theme);
@@ -45,10 +48,52 @@ $theme: mat-light-theme($trm-primary, $trm-accent);
     padding-bottom: 30px;
   }
 
+  mat-toolbar {
+    &.mat-toolbar {
+      background: #fff;
+      color: rgba(0, 0, 0, 0.87);
+    }
+    &.top-bar {
+      position: relative;
+      z-index: 2;
+    }
+    .align-right {
+      display: flex;
+      flex: 1;
+      justify-content: flex-end;
+    }
+  }
+
   mat-sidenav {
     width: 240px;
   }
   .mat-drawer {
-    background-color: #2d323e;
+    background-color: #fff;
+  }
+  .mat-drawer-container {
+    background-color: map-get($vars, background);
+  }
+  .page-wrapper {
+    height: calc(100vh - 64px);
+  }
+
+  .mat-expansion-panel {
+    &.no-box-shadow {
+      box-shadow: none;
+    }
+
+    &.mat-expanded {
+      background-color: map-get($vars, background);
+    }
+    .mat-expansion-panel-header-title {
+      align-items: center;
+
+      mat-icon {
+        margin-right: 7px;
+      }
+    }
+    .mat-expansion-panel-body {
+      padding: 0;
+    }
   }
 }

@@ -1,3 +1,11 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <div class="align-right">
+      Training Center > Courses
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
 <div *ngIf="trainingCenterState$ | async as trainingCenter">
   <div *ngIf="trainingCenter.loadingRefBlocks">LOADING</div>
   <div *ngIf="trainingCenter.isloadingRefBlocksFailed">LOADING</div>
