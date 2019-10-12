@@ -1,1 +1,25 @@
-Training center page
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <img class="trm-logo" src="assets/trm-logo.png" />
+    <button mat-button>Training Managment</button>
+    <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+    <div class="align-right">
+      <a mat-button routerLink="/account"> Account </a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side">
+    <mat-nav-list>
+      <a mat-list-item routerLink="courses"> Courses </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: 88vh;">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
