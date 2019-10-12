@@ -5,16 +5,18 @@ import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
 import { NgxsModule } from '@ngxs/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NotFoundComponent } from './error-pages/not-found/not-found.component';
+import { LoginPage } from './auth/login-page/login.page';
+import { ErrorsModule } from './errors/errors.module';
 
 @NgModule({
-  declarations: [AppComponent, NotFoundComponent],
+  declarations: [AppComponent, LoginPage],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     NgxsModule.forRoot([]),
-    NgxsRouterPluginModule.forRoot()
+    NgxsRouterPluginModule.forRoot(),
+    ErrorsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
