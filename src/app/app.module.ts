@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,6 +17,7 @@ import { ErrorsModule } from './errors/errors.module';
     BrowserAnimationsModule,
     NgxsModule.forRoot([]),
     NgxsRouterPluginModule.forRoot(),
+    HttpClientModule,
     ErrorsModule
   ],
   providers: [],

@@ -28,13 +28,14 @@ export class AuthService {
    * Verify if user is authenticated
    */
   isLoggedIn(): boolean {
-    return this.idToken ? true : false;
+    return true; // TODO: Add authentication check
+    // return this.idToken ? true : false;
   }
 
   /**
    * Verify user rights
    */
   isAuthorized() {
-    return false;
+    return true; // TODO: Add authorization check
   }
 }
