@@ -1,0 +1,47 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$custom-blue: (
+  default: #005bbb,
+  lighter: #5887ee,
+  darker: #00338a,
+  contrast: (
+    default: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text
+  )
+);
+
+$custom-orange: (
+  default: #fe5815,
+  lighter: #ff8b47,
+  darker: #c31f00,
+  contrast: (
+    default: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text
+  )
+);
+
+$trm-primary: mat-palette($custom-blue, default, lighter, darker);
+$trm-accent: mat-palette($custom-orange, default, lighter, darker);
+
+$theme: mat-light-theme($trm-primary, $trm-accent);
+
+.trm-light {
+  $vars: (
+    background: whitesmoke,
+    icon: #111111
+  );
+
+  @include angular-material-theme($theme);
+
+  .loading {
+    display: flex;
+    justify-content: center;
+    background-color: map-get($vars, background-spinner);
+    padding-top: 25px;
+    padding-bottom: 30px;
+  }
+}
