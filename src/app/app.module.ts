@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
 import { NgxsModule } from '@ngxs/store';
 import { OAuthModule } from 'angular-oauth2-oidc';
@@ -20,6 +21,7 @@ import { ErrorsModule } from './errors/errors.module';
     BrowserAnimationsModule,
     NgxsModule.forRoot([]),
     NgxsRouterPluginModule.forRoot(),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
     OAuthModule.forRoot(),
     HttpClientModule,
     AngularMaterialModule,
