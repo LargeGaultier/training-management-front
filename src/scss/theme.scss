@@ -44,4 +44,11 @@ $theme: mat-light-theme($trm-primary, $trm-accent);
     padding-top: 25px;
     padding-bottom: 30px;
   }
+
+  mat-sidenav {
+    width: 240px;
+  }
+  .mat-drawer {
+    background-color: #2d323e;
+  }
 }
