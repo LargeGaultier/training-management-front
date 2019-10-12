@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
 import { NgxsModule } from '@ngxs/store';
+import { OAuthModule } from 'angular-oauth2-oidc';
 import { AngularMaterialModule } from './angular-material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { ErrorsModule } from './errors/errors.module';
     BrowserAnimationsModule,
     NgxsModule.forRoot([]),
     NgxsRouterPluginModule.forRoot(),
+    OAuthModule.forRoot(),
     HttpClientModule,
     AngularMaterialModule,
     ReactiveFormsModule,
