@@ -6,19 +6,21 @@ import {
   MatIconModule,
   MatInputModule,
   MatListModule,
+  MatProgressSpinnerModule,
   MatSidenavModule,
   MatToolbarModule
 } from '@angular/material';
 
 const MAT_COMPONENTS_MODULES = [
   MatButtonModule,
-  MatSidenavModule,
-  MatToolbarModule,
-  MatListModule,
-  MatIconModule,
   MatCardModule,
+  MatExpansionModule,
+  MatIconModule,
   MatInputModule,
-  MatExpansionModule
+  MatListModule,
+  MatProgressSpinnerModule,
+  MatSidenavModule,
+  MatToolbarModule
 ];
 
 @NgModule({
