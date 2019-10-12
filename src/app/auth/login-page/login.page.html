@@ -1,4 +1,48 @@
-<div>
-  <h1 class="mat-display-4">Login</h1>
-  <h1 class="mat-h1">welcome.</h1>
+<div class="login-page">
+  <mat-card>
+    <div class="trm-logo">
+      <img src="assets/trm-logo.png" alt="Photo of a Shiba Inu" />
+    </div>
+
+    <mat-card-title> Login to your account.</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="submit()">
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input
+              type="text"
+              matInput
+              placeholder="Email"
+              formControlName="email"
+            />
+            <mat-icon matSuffix>email</mat-icon>
+            <mat-error *ngIf="email.invalid">Email is required</mat-error>
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input
+              type="password"
+              matInput
+              placeholder="Password"
+              formControlName="password"
+            />
+            <mat-icon matSuffix>lock</mat-icon>
+            <mat-error *ngIf="password.invalid">Password is required</mat-error>
+          </mat-form-field>
+        </p>
+
+        <p *ngIf="error" class="error">
+          {{ error }}
+        </p>
+
+        <div class="button">
+          <button type="submit" mat-button>Login</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
 </div>

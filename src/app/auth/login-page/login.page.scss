@@ -3,8 +3,45 @@
   flex: 1;
   align-items: center;
   justify-content: center;
+  background-image: url('~/assets/images/login-bg-1.jpg');
+  background-size: cover;
 }
 
-div {
-  width: 400px;
+.login-page {
+  height: 100vh;
+  display: flex;
+  background-size: cover;
+  align-items: center;
+}
+
+.trm-logo {
+  display: flex;
+  justify-content: center;
+  img {
+    padding: 15px;
+    width: 220px;
+  }
+}
+
+.mat-form-field {
+  width: 100%;
+  min-width: 300px;
+}
+
+mat-card-title,
+mat-card-content {
+  display: flex;
+  justify-content: center;
+}
+
+.error {
+  padding: 16px;
+  width: 300px;
+  color: white;
+  background-color: red;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
 }

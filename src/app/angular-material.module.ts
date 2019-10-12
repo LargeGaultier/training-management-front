@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import {
   MatButtonModule,
+  MatCardModule,
   MatIconModule,
+  MatInputModule,
   MatListModule,
   MatSidenavModule,
   MatToolbarModule
@@ -12,7 +14,9 @@ const MAT_COMPONENTS_MODULES = [
   MatSidenavModule,
   MatToolbarModule,
   MatListModule,
-  MatIconModule
+  MatIconModule,
+  MatCardModule,
+  MatInputModule
 ];
 
 @NgModule({
