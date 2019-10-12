@@ -1,3 +1,5 @@
-<div *ngIf="loadingRefBlocks$ | async">LOADING</div>
-<div *ngFor="let block of refBlocks$ | async">{{ block.label }}</div>
-<div *ngIf="isloadingRefBlocksFailed$ | async">GROS FAIL DES FAMILLES</div>
+<div *ngIf="trainingCenterState$ | async as trainingCenter">
+  <div *ngIf="trainingCenter.loadingRefBlocks">LOADING</div>
+  <div *ngIf="trainingCenter.isloadingRefBlocksFailed">LOADING</div>
+  <div *ngFor="let block of trainingCenter.refBlocks">{{ block.label }}</div>
+</div>

@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { RefBlock } from '../../models/refBlock.model';
 import { GetRefBlocks } from '../training-center.actions';
-import { CourseService } from './providers/course.service';
+import {
+  TrainingCenterModel,
+  TrainingCenterState
+} from '../training-center.state';
 
 @Component({
   selector: 'trm-course',
@@ -11,11 +13,11 @@ import { CourseService } from './providers/course.service';
   styleUrls: ['./course.page.scss']
 })
 export class CoursePage implements OnInit {
-  @Select() refBlocks$: Observable<RefBlock[]>;
-  @Select() loadingRefBlocks$: Observable<boolean>;
-  @Select() isloadingRefBlocksFailed$: Observable<boolean>;
+  @Select(TrainingCenterState) trainingCenterState$: Observable<
+    TrainingCenterModel
+  >;
 
-  constructor(private store: Store, private courseService: CourseService) {}
+  constructor(private store: Store) {}
 
   ngOnInit() {
     this.store.dispatch(GetRefBlocks);

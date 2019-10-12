@@ -28,6 +28,7 @@ export class TrainingCenterState {
   @Action(GetRefBlocks)
   getRefBlocks({ dispatch, patchState }: StateContext<TrainingCenterModel>) {
     patchState({ loadingRefBlocks: true });
+    patchState({ refBlocks: [] });
     return this.courseService
       .getRefBlocks(0)
       .pipe(
