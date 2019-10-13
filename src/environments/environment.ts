@@ -1,7 +1,7 @@
 export const environment = {
   production: false,
   apiTrainingCenter:
-    'https://trainingmanagementrefwebapi.azurewebsites.net/api/v1/training-center/',
+    'https://eduximbackdev.azurewebsites.net/api/v1/training-center/',
   routeRefBlocks: '/refblocks/'
 };
 
