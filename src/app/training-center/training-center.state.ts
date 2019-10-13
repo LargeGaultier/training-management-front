@@ -1,11 +1,13 @@
 import { Action, State, StateContext } from '@ngxs/store';
 import { catchError, tap } from 'rxjs/operators';
 import { RefBlock } from '../models/refBlock.model';
+import { RefDegree } from '../models/refDegree.model';
 import { CourseService } from './course/providers/course.service';
 import {
   GetRefBlocks,
   GetRefBlocksFail,
   GetRefBlocksSuccess,
+  RefDegrees,
   SelectRefBlock
 } from './training-center.actions';
 
@@ -14,6 +16,7 @@ export interface TrainingCenterModel {
   refBlocks: RefBlock[];
   isloadingRefBlocksFailed: boolean;
   selectedRefBlock: RefBlock;
+  refDegrees: RefDegree[];
 }
 
 @State<TrainingCenterModel>({
@@ -22,7 +25,8 @@ export interface TrainingCenterModel {
     loadingRefBlocks: true,
     refBlocks: [],
     isloadingRefBlocksFailed: false,
-    selectedRefBlock: null
+    selectedRefBlock: null,
+    refDegrees: []
   }
 })
 export class TrainingCenterState {
@@ -68,5 +72,32 @@ export class TrainingCenterState {
     { payload }: SelectRefBlock
   ) {
     patchState({ selectedRefBlock: payload });
+  }
+
+  @Action(RefDegrees.Get)
+  getRefDegrees({ dispatch, patchState }: StateContext<TrainingCenterModel>) {
+    patchState({
+      loadingRefBlocks: true,
+      refBlocks: [],
+      selectedRefBlock: null
+    });
+    return this.courseService
+      .getRefDegrees(0)
+      .pipe(
+        tap(
+          res => dispatch(new RefDegrees.GetSuccess(res)),
+          catchError(() => dispatch(RefDegrees.GetFail))
+        )
+      );
+  }
+
+  @Action(RefDegrees.GetSuccess)
+  getRefDegreesSuccess(
+    { patchState }: StateContext<TrainingCenterModel>,
+    { payload }: RefDegrees.GetSuccess
+  ) {
+    patchState({
+      refDegrees: payload
+    });
   }
 }

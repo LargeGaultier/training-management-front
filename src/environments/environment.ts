@@ -2,7 +2,8 @@ export const environment = {
   production: false,
   apiTrainingCenter:
     'https://eduximbackdev.azurewebsites.net/api/v1/training-center/',
-  routeRefBlocks: '/refblocks/'
+  routeRefBlocks: '/refblocks/',
+  routeRefDegrees: '/refdegrees/'
 };
 
 /*

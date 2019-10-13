@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { GetRefBlocks } from '../training-center.actions';
+import { GetRefBlocks, RefDegrees } from '../training-center.actions';
 import {
   TrainingCenterModel,
   TrainingCenterState
@@ -20,6 +20,6 @@ export class CoursePage implements OnInit {
   constructor(private store: Store) {}
 
   ngOnInit() {
-    this.store.dispatch(GetRefBlocks);
+    this.store.dispatch([GetRefBlocks, RefDegrees.Get]);
   }
 }

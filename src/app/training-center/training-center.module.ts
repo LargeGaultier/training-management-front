@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { NgxsModule } from '@ngxs/store';
 import { AngularMaterialModule } from '../angular-material.module';
 import { LayoutModule } from '../layout/layout.module';
@@ -20,6 +21,7 @@ import { TrainingCenterState } from './training-center.state';
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     NgxsModule.forFeature([TrainingCenterState]),
     TrainingCenterRoutingModule,
     AngularMaterialModule,
