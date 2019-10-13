@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-card-title>{{ refBlock.label }}</mat-card-title>
+  <mat-card-content>
+    <div class="mat-body">{{ refBlock.description }}</div>
+
+    <mat-list>
+      <mat-divider></mat-divider>
+      <h3 mat-subheader>Degrees</h3>
+      <mat-list-item *ngFor="let degree of refBlock.refDegreeDTOs">
+        <mat-icon mat-list-icon>group_work</mat-icon>
+        <h4 mat-line>{{ degree.name }}</h4>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
