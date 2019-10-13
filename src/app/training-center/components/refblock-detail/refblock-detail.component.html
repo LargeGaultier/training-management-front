@@ -1,15 +1,85 @@
 <mat-card>
-  <mat-card-title>{{ refBlock.label }}</mat-card-title>
-  <mat-card-content>
-    <div class="mat-body">{{ refBlock.description }}</div>
+  <ng-container *ngIf="!isEditing; else editing">
+    <mat-card-title>{{ refBlock.label }}</mat-card-title>
+    <mat-card-content>
+      <div class="mat-body">{{ refBlock.description }}</div>
 
-    <mat-list>
-      <mat-divider></mat-divider>
-      <h3 mat-subheader>Degrees</h3>
-      <mat-list-item *ngFor="let degree of refBlock.refDegreeDTOs">
-        <mat-icon mat-list-icon>group_work</mat-icon>
-        <h4 mat-line>{{ degree.name }}</h4>
-      </mat-list-item>
-    </mat-list>
-  </mat-card-content>
+      <mat-list>
+        <mat-divider></mat-divider>
+        <h3 mat-subheader>Degrees</h3>
+        <mat-list-item *ngFor="let degree of refBlock.refDegreeDTOs">
+          <mat-icon mat-list-icon>group_work</mat-icon>
+          <h4 mat-line>{{ degree.name }}</h4>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+    <mat-card-actions>
+      <button (click)="isEditing = true" mat-button>Edit</button>
+    </mat-card-actions>
+  </ng-container>
+
+  <ng-template #editing>
+    <mat-card-content>
+      <form [formGroup]="refBlockForm">
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Label</mat-label>
+            <input
+              type="text"
+              matInput
+              placeholder="Label"
+              formControlName="label"
+            />
+            <mat-icon matSuffix>label</mat-icon>
+            <mat-error *ngIf="label.invalid">Label is required</mat-error>
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <textarea
+              type="text"
+              matInput
+              placeholder="Description"
+              formControlName="description"
+            ></textarea>
+            <mat-icon matSuffix>description</mat-icon>
+            <mat-error *ngIf="description.invalid"
+              >Description is required</mat-error
+            >
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Degrees</mat-label>
+            <mat-select formControlName="degrees" multiple>
+              <mat-option
+                *ngFor="let degree of refBlock.refDegreeDTOs"
+                [value]="degree"
+                >{{ degree.name }}</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+          <mat-error *ngIf="degrees.invalid"
+            >At least one degree is required</mat-error
+          >
+        </p>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="button">
+        <button
+          (click)="saveRefBlock()"
+          [disabled]="refBlockForm.invalid"
+          mat-button
+          mat-raised-button
+          color="primary"
+        >
+          Save
+        </button>
+        <button (click)="isEditing = false" mat-button>Cancel</button>
+      </div>
+    </mat-card-actions>
+  </ng-template>
 </mat-card>
