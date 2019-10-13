@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginPage } from './auth/login-page/login.page';
 import { ErrorsModule } from './errors/errors.module';
+import { LayoutModule } from './layout/layout.module';
 
 @NgModule({
   declarations: [AppComponent, LoginPage],
@@ -23,6 +24,7 @@ import { ErrorsModule } from './errors/errors.module';
     NgxsRouterPluginModule.forRoot(),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     OAuthModule.forRoot(),
+    LayoutModule.forRoot(),
     HttpClientModule,
     AngularMaterialModule,
     ReactiveFormsModule,
