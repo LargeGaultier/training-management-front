@@ -3,8 +3,9 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AngularMaterialModule } from '../angular-material.module';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
-const DECLARATIONS = [SidenavComponent];
+const DECLARATIONS = [SidenavComponent, ToolbarComponent];
 
 @NgModule({
   imports: [AngularMaterialModule, CommonModule, RouterModule],
