@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class TrainingCenterPage {
   title = 'training-management-front';
+
+  panelOpenState = true;
 }
