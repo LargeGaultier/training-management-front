@@ -5,13 +5,15 @@ import { CourseService } from './course/providers/course.service';
 import {
   GetRefBlocks,
   GetRefBlocksFail,
-  GetRefBlocksSuccess
+  GetRefBlocksSuccess,
+  SelectRefBlock
 } from './training-center.actions';
 
 export interface TrainingCenterModel {
   loadingRefBlocks: boolean;
   refBlocks: RefBlock[];
   isloadingRefBlocksFailed: boolean;
+  selectedRefBlock: RefBlock;
 }
 
 @State<TrainingCenterModel>({
@@ -19,7 +21,8 @@ export interface TrainingCenterModel {
   defaults: {
     loadingRefBlocks: true,
     refBlocks: [],
-    isloadingRefBlocksFailed: false
+    isloadingRefBlocksFailed: false,
+    selectedRefBlock: null
   }
 })
 export class TrainingCenterState {
@@ -27,7 +30,11 @@ export class TrainingCenterState {
 
   @Action(GetRefBlocks)
   getRefBlocks({ dispatch, patchState }: StateContext<TrainingCenterModel>) {
-    patchState({ loadingRefBlocks: true, refBlocks: [] });
+    patchState({
+      loadingRefBlocks: true,
+      refBlocks: [],
+      selectedRefBlock: null
+    });
     return this.courseService
       .getRefBlocks(0)
       .pipe(
@@ -53,5 +60,13 @@ export class TrainingCenterState {
   @Action(GetRefBlocksFail)
   getRefBlockFail({ patchState }: StateContext<TrainingCenterModel>) {
     patchState({ loadingRefBlocks: false, isloadingRefBlocksFailed: true });
+  }
+
+  @Action(SelectRefBlock)
+  selectRefBlock(
+    { patchState }: StateContext<TrainingCenterModel>,
+    { payload }: SelectRefBlock
+  ) {
+    patchState({ selectedRefBlock: payload });
   }
 }

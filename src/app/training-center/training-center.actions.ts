@@ -12,3 +12,8 @@ export class GetRefBlocksSuccess {
 export class GetRefBlocksFail {
   static readonly type = '[TrainingCenter Page] GetRefBlocksFail';
 }
+
+export class SelectRefBlock {
+  static readonly type = '[TrainingCenter Page] SelectRefBlock';
+  constructor(public payload: RefBlock) {}
+}

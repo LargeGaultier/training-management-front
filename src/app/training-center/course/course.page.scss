@@ -29,16 +29,16 @@
 
 trm-refblock-detail,
 trm-refblock-list-item {
-  margin: 0 10px;
+  margin: 0 0 0px 10px;
 }
 
 .detail-panel {
-  padding-top: 20px;
   .empty-selection {
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 1;
+    margin-top: 20px;
     height: 250px;
     border: 10px rgba(0, 0, 0, 0.4) dashed;
 
