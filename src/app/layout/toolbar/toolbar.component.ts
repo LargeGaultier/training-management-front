@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngxs/store';
-import { ToggleSidnav } from '../layout.actions';
+import { Sidenav } from '../layout.actions';
 
 @Component({
   selector: 'trm-toolbar',
@@ -11,6 +11,6 @@ export class ToolbarComponent {
   constructor(private store: Store) {}
 
   sidenavToggle() {
-    this.store.dispatch(ToggleSidnav);
+    this.store.dispatch(Sidenav.Toggle);
   }
 }

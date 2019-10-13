@@ -54,7 +54,8 @@
     "use-pipe-transform-interface": true,
     "variable-name": {
       "options": ["allow-leading-underscore"]
-    }
+    },
+    "no-namespace": false
   },
   "rulesDirectory": ["codelyzer"]
 }

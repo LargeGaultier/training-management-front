@@ -1,5 +1,5 @@
 import { Action, State, StateContext } from '@ngxs/store';
-import { ToggleSidnav } from './layout.actions';
+import { Sidenav } from './layout.actions';
 
 export interface LayoutModel {
   isSidenavOpened: boolean;
@@ -12,11 +12,25 @@ export interface LayoutModel {
   }
 })
 export class LayoutState {
-  @Action(ToggleSidnav)
-  getRefBlocksSuccess({ patchState, getState }: StateContext<LayoutModel>) {
+  @Action(Sidenav.Toggle)
+  toggleSidenav({ patchState, getState }: StateContext<LayoutModel>) {
     const state = getState();
     patchState({
       isSidenavOpened: !state.isSidenavOpened
+    });
+  }
+  @Action(Sidenav.Open)
+  openSidenav({ patchState, getState }: StateContext<LayoutModel>) {
+    const state = getState();
+    patchState({
+      isSidenavOpened: true
+    });
+  }
+  @Action(Sidenav.Close)
+  closeSidenav({ patchState, getState }: StateContext<LayoutModel>) {
+    const state = getState();
+    patchState({
+      isSidenavOpened: false
     });
   }
 }
