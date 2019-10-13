@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { NgxsModule } from '@ngxs/store';
 import { AngularMaterialModule } from '../angular-material.module';
+import { LayoutModule } from '../layout/layout.module';
 import { RefBlockDetailComponent } from './components/refblock-detail/refblock-detail.component';
 import { RefBlockListItemComponent } from './components/refblock-list-item/refblock-list-item.component';
 import { CoursePage } from './course/course.page';
@@ -21,7 +22,8 @@ import { TrainingCenterState } from './training-center.state';
     CommonModule,
     NgxsModule.forFeature([TrainingCenterState]),
     TrainingCenterRoutingModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    LayoutModule
   ],
   providers: [CourseService]
 })
