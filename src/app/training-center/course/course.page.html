@@ -8,11 +8,16 @@
 
 <div class="content" *ngIf="trainingCenterState$ | async as trainingCenter">
   <mat-spinner *ngIf="trainingCenter.loadingRefBlocks"></mat-spinner>
-  <div *ngIf="trainingCenter.isloadingRefBlocksFailed">
+  <span *ngIf="trainingCenter.isloadingRefBlocksFailed">
     Grosse erreur des familles
+  </span>
+  <div>
+    <div class="master-panel">
+      <trm-refblock-list-item
+        *ngFor="let block of trainingCenter.refBlocks"
+        [refBlock]="block"
+      ></trm-refblock-list-item>
+    </div>
+    <div class="detail-panel"></div>
   </div>
-  <trm-refblock-list-item
-    *ngFor="let block of trainingCenter.refBlocks"
-    [refBlock]="block"
-  ></trm-refblock-list-item>
 </div>
