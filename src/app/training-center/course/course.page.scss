@@ -31,3 +31,20 @@ trm-refblock-detail,
 trm-refblock-list-item {
   margin: 0 10px;
 }
+
+.detail-panel {
+  padding-top: 20px;
+  .empty-selection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 250px;
+    border: 10px rgba(0, 0, 0, 0.4) dashed;
+
+    h2 {
+      text-align: center;
+      color: rgba(0, 0, 0, 0.4);
+    }
+  }
+}
