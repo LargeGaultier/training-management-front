@@ -27,7 +27,7 @@ mat-card-content {
   justify-content: center;
   img {
     padding: 15px;
-    width: 220px;
+    width: 260px;
   }
 }
 
@@ -38,6 +38,7 @@ mat-card-content {
 
 mat-card-title,
 mat-card-content {
+  font-size: 18px;
   display: flex;
   justify-content: center;
 }

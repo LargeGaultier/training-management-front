@@ -6,6 +6,7 @@ import {
   MatIconModule,
   MatInputModule,
   MatListModule,
+  MatMenuModule,
   MatProgressSpinnerModule,
   MatSidenavModule,
   MatToolbarModule
@@ -18,6 +19,7 @@ const MAT_COMPONENTS_MODULES = [
   MatIconModule,
   MatInputModule,
   MatListModule,
+  MatMenuModule,
   MatProgressSpinnerModule,
   MatSidenavModule,
   MatToolbarModule
