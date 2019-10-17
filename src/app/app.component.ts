@@ -3,7 +3,6 @@ import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { JwksValidationHandler, OAuthService } from 'angular-oauth2-oidc';
 import { authCodeFlowConfig } from './auth/auth.config';
-import { LayoutService } from './layout/layout.service';
 
 @Component({
   selector: 'edx-root',
@@ -16,8 +15,7 @@ export class AppComponent {
   constructor(
     private iconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
-    private oauthService: OAuthService,
-    private layoutService: LayoutService
+    private oauthService: OAuthService
   ) {
     ['edx-logo'].forEach(name => {
       this.iconRegistry.addSvgIcon(
