@@ -11,7 +11,7 @@ import { LayoutService } from './layout/layout.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'training-management-front';
+  title = 'eduxim-front';
 
   constructor(
     private iconRegistry: MatIconRegistry,

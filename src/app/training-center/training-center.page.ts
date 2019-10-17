@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./training-center.page.scss']
 })
 export class TrainingCenterPage {
-  title = 'training-management-front';
+  title = 'eduxim-front';
 }
