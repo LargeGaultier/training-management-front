@@ -6,7 +6,7 @@ import { authCodeFlowConfig } from './auth/auth.config';
 import { LayoutService } from './layout/layout.service';
 
 @Component({
-  selector: 'trm-root',
+  selector: 'edx-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
@@ -19,7 +19,7 @@ export class AppComponent {
     private oauthService: OAuthService,
     private layoutService: LayoutService
   ) {
-    ['trm-logo'].forEach(name => {
+    ['edx-logo'].forEach(name => {
       this.iconRegistry.addSvgIcon(
         name,
         this.domSanitizer.bypassSecurityTrustResourceUrl(

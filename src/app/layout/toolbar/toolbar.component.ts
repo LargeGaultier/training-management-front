@@ -3,7 +3,7 @@ import { Store } from '@ngxs/store';
 import { Sidenav } from '../layout.actions';
 
 @Component({
-  selector: 'trm-toolbar',
+  selector: 'edx-toolbar',
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss']
 })

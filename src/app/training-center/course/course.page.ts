@@ -8,7 +8,7 @@ import {
 } from '../training-center.state';
 
 @Component({
-  selector: 'trm-course',
+  selector: 'edx-course',
   templateUrl: './course.page.html',
   styleUrls: ['./course.page.scss']
 })

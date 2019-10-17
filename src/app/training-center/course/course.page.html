@@ -13,16 +13,16 @@
   </span>
   <div>
     <div class="master-panel">
-      <trm-refblock-list-item
+      <edx-refblock-list-item
         *ngFor="let block of trainingCenter.refBlocks"
         [refBlock]="block"
-      ></trm-refblock-list-item>
+      ></edx-refblock-list-item>
     </div>
     <div class="detail-panel">
-      <trm-refblock-detail
+      <edx-refblock-detail
         *ngIf="trainingCenter.selectedRefBlock; else emptySelection"
         [refBlock]="trainingCenter.selectedRefBlock"
-      ></trm-refblock-detail>
+      ></edx-refblock-detail>
       <ng-template #emptySelection>
         <div class="empty-selection">
           <h2 class="mat-h2">

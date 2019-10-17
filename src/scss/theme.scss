@@ -24,14 +24,14 @@ $custom-orange: (
   )
 );
 
-$trm-primary: mat-palette($custom-blue, default, lighter, darker);
-$trm-accent: mat-palette($custom-orange, default, lighter, darker);
+$edx-primary: mat-palette($custom-blue, default, lighter, darker);
+$edx-accent: mat-palette($custom-orange, default, lighter, darker);
 
-$theme: mat-light-theme($trm-primary, $trm-accent);
+$theme: mat-light-theme($edx-primary, $edx-accent);
 
 $primary: map-get($theme, primary);
 
-.trm-light {
+.edx-light {
   $vars: (
     background: #eef4f8,
     icon: #111111,

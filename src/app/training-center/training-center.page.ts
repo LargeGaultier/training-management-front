@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'trm-training-center',
+  selector: 'edx-training-center',
   templateUrl: './training-center.page.html',
   styleUrls: ['./training-center.page.scss']
 })

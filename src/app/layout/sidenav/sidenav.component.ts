@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { LayoutModel, LayoutState } from '../layout.state';
 
 @Component({
-  selector: 'trm-sidenav',
+  selector: 'edx-sidenav',
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss']
 })

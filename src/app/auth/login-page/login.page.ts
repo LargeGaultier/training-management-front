@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { OAuthService } from 'angular-oauth2-oidc';
 
 @Component({
-  selector: 'trm-login-page',
+  selector: 'edx-login-page',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss']
 })

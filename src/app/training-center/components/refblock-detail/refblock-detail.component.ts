@@ -4,7 +4,7 @@ import { Store } from '@ngxs/store';
 import { RefBlock } from '../../../models/refBlock.model';
 
 @Component({
-  selector: 'trm-refblock-detail',
+  selector: 'edx-refblock-detail',
   templateUrl: './refblock-detail.component.html',
   styleUrls: ['./refblock-detail.component.scss']
 })

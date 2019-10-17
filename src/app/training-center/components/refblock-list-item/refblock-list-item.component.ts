@@ -4,7 +4,7 @@ import { RefBlock } from '../../../models/refBlock.model';
 import { SelectRefBlock } from '../../training-center.actions';
 
 @Component({
-  selector: 'trm-refblock-list-item',
+  selector: 'edx-refblock-list-item',
   templateUrl: './refblock-list-item.component.html',
   styleUrls: ['./refblock-list-item.component.scss']
 })
