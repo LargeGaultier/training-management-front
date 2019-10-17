@@ -7,11 +7,10 @@
 </mat-toolbar>
 
 <div class="content" *ngIf="trainingCenterState$ | async as trainingCenter">
-  <mat-spinner *ngIf="trainingCenter.loadingRefBlocks"></mat-spinner>
   <span *ngIf="trainingCenter.isloadingRefBlocksFailed">
     Grosse erreur des familles
   </span>
-  <div>
+  <div *ngIf="!trainingCenter.loadingRefBlocks; else loading">
     <div class="master-panel">
       <edx-refblock-list-item
         *ngFor="let block of trainingCenter.refBlocks"
@@ -32,4 +31,8 @@
       </ng-template>
     </div>
   </div>
+
+  <ng-template #loading>
+    <mat-spinner></mat-spinner>
+  </ng-template>
 </div>
